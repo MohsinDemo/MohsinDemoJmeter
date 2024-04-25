@@ -1,5 +1,4 @@
 name: CI
-
 on:
   push:
     branches:
@@ -11,19 +10,22 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    
     steps:
       - uses: actions/checkout@v2
-      
       - name: PerfAction for JMeter
-        uses: QAInsights/PerfAction@v2
+  # You may pin to the exact commit or the version.
+  # uses: QAInsights/PerfAction@2c22274f313e13ce9ddaf60c9f337a0e628fcb9d
+        uses: QAInsights/PerfAction@2.0
         with:
-          test-plan-path: './GoogleJenkins.jmx'
+    # jmeter test plan to execute
+            test-plan-path: './GoogleJenkins.jmx'
       - name: Upload Results
         uses: actions/upload-artifact@v2
         with:
-         name: jmeter-results
-         path: result.jtl
+          name: jmeter-results
+          path: result.jtl
+
+          
          
  
           
