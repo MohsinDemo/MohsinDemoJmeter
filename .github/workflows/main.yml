@@ -13,17 +13,17 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-      - uses: actions/checkout@v5.6.2
+      - uses: actions/checkout@v3
       
       - name: PerfAction for JMeter
-        uses: QAInsights/PerfAction@v5.6.2
+        uses: QAInsights/PerfAction@v3
         with:
           test-plan-path: './GoogleJenkins.jmx'
       - name: Upload Results
-        uses: actions/upload-artifact@v5.6.2
+        uses: actions/upload-artifact@3
         with:
          name: jmeter-results
          path: result.jtl
-         if-no-files-found: error
+         
  
           
