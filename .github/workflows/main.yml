@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-      - uses: actions/checkout@5.6.2
+      - uses: actions/checkout@V2
       
       - name: PerfAction for JMeter
         uses: QAInsights/PerfAction@v5.6.2
